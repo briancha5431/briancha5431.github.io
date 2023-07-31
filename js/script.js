@@ -53,31 +53,10 @@ window.onscroll = () => {
 const sr = ScrollReveal({
     distance: '45px',
     duration: 2700,
-    reset: true
+    reset: false
 })
 
-sr.reveal('.home-text', { delay: 350, origin: 'left' })
-sr.reveal('.home-img', { delay: 350, origin: 'right' })
+sr.reveal('.home-text', { delay: 150, origin: 'left' })
+sr.reveal('.home-img', { delay: 150, origin: 'right' })
 
-sr.reveal('.sub-service,.about,.portfolio,.service,.cta,.contact', { delay: 200, origin: 'bottom' })
-
-//////////////////
-
-// $(function () {
-//     $("#contact-form").submit(function (event) {
-//         event.preventDefault();
-//         var formData = $(this).serialize();
-//         $.ajax({
-//             type: "POST",
-//             url: "send-email.php",
-//             data: formData,
-//             success: function (response) {
-//                 alert("Your message has been sent.");
-//             },
-//             error: function (response) {
-//                 alert("There was an error sending your message.");
-//             },
-//         });
-//     });
-// });
-// FIX ME
+sr.reveal('.sub-service,.about,.portfolio,.service,.cta,.contact', { delay: 100, origin: 'bottom' })

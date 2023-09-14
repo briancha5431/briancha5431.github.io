@@ -287,6 +287,11 @@ header.sticky {
     margin-bottom: 45px;
 }
 
+.about-text a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
 .heading {
     text-align: center;
 }
@@ -352,36 +357,37 @@ header.sticky {
 .layer h3 {
     position: absolute;
     width: 100%;
-    font-size: 25px;
+    font-size: 27px;
     font-weight: 500;
     color: var(--bg-color);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: all .40s;
+    transition: all .30s;
 }
 
 .layer:hover h3 {
-    bottom: 52%;
+    bottom: 65%;
     opacity: 1;
 }
 
 .layer h5 {
+    /* padding: 10px, 10px, 10px, 10px; */
     position: absolute;
     width: 100%;
     font-size: 17px;
     font-weight: 500;
     color: var(--bg-color);
-    bottom: 0;
+    top: 0; /* Set the top value instead of bottom */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: all .40s;
+    transition: all .30s;
 }
 
 .layer:hover h5 {
-    bottom: 48%;
+    top: 37%;
     opacity: 1;
 }
 
@@ -572,6 +578,11 @@ header.sticky {
 .ends {
     text-align: center;
     padding: 100px;
+}
+
+.ends a {
+    color: var(--main-color);
+    text-decoration: none;
 }
 
 .ends p {

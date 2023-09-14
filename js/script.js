@@ -60,3 +60,40 @@ sr.reveal('.home-text', { delay: 150, origin: 'left' })
 sr.reveal('.home-img', { delay: 150, origin: 'right' })
 
 sr.reveal('.sub-service,.about,.portfolio,.service,.cta,.contact', { delay: 100, origin: 'bottom' })
+
+
+gsap.set('.motiv img',{xPercent:-50, yPercent:-50})
+
+const imgs = gsap.utils.toArray("#imgContainer .motiv");
+const next = 5; // time to change
+const fade = 1.5; // fade time 
+
+
+
+//only for the first 
+gsap.set(imgs[0], {autoAlpha:1})
+
+let split = new SplitText('.motiv01 h1', {type:"chars"}),
+    chars = split.chars;
+gsap.from(chars, {autoAlpha:0, x: -10, duration:0.3, ease: 'Power2.in', stagger:0.1, delay:1});
+
+// ====================
+function crossfade(){
+
+  split = new SplitText(imgs[1], {type:"chars"});
+  chars = split.chars;
+
+  const action = gsap.timeline()
+  .to(imgs[0], {autoAlpha:0, duration:fade})
+  .to(imgs[1], {autoAlpha:1, duration:fade},0)
+
+  .from(chars, {autoAlpha:0, x: -10, duration:0.3, ease: 'Power2.in', stagger:0.1}, 1);
+
+  imgs.push( imgs.shift() );
+  // start endless run
+  gsap.delayedCall(next, crossfade);
+}
+
+// start the crossfade after next = 3 sec
+gsap.delayedCall(next, crossfade);
+
